@@ -1,7 +1,8 @@
 .element__group {
-width: 246px;
-display: flex;
-flex-direction: row;
-justify-content: space-between;
-margin: 25px 15px 31px 21px;
-}
+    max-width: 246px;
+    max-height: 79px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 25px 15px 31px 21px;
+    }
