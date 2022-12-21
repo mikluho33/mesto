@@ -1,5 +1,4 @@
 const profileEdit = document.querySelector('.profile__edit-button');
-console.log('тест работы');
 const profileClose = document.querySelector('.popup__close-button');
 const profileName = document.querySelector('.profile__name');
 const profileDescription = document.querySelector('.profile__description');
