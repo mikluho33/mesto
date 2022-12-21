@@ -13,7 +13,6 @@ function popupOpen() {
     descriptionInput.value = profileDescription.textContent;
 }
 
-
 function popupClose() {
     popup.classList.remove('popup_opened');
 }
