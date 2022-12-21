@@ -1,11 +1,20 @@
 .content {
     max-width: 880px;
-    padding: 40px 200px 66px 200px;
+    margin: 40px auto 66px auto;
+    justify-content: center;
   }
   
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 1100px) {
+    .content {
+      max-width: 660px;
+      margin: 40px auto 66px auto;
+    }
+  }
+ 
+  
+  @media screen and (max-width: 700px) {
     .content {
         max-width: 282px;
-        padding: 42px 19px 48px 19px;
+        margin: 42px auto 48px auto;
     }
   }
