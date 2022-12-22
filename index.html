@@ -9,26 +9,26 @@
 </head>
 <body class="page">
     <header class="header">
-        <div class="header__logo"></div>
+        <img class="header__logo" src="./images/logo.svg">
     </header>
     <main class="content">
         <section class="profile">
-            <img class="profile__avatar" src="./images/avatar.png" alt="Аватар Жак Ив Кусто">
+            <img class="profile__avatar" src="./images/avatar.png" alt="Аватар пользователя">
             <div class="profile__info">
                 <div class="profile__title">
                     <h1 class="profile__name">Жак-Ив Кусто</h1>
-                    <button type="button" class="profile__edit-button"></button>
+                    <button type="button" class="profile__edit-button" aria-label="Редактирование профиля"></button>
                 </div>
                 <p class="profile__description">Исследователь океана</p>
             </div>
-            <button type="button" class="profile__add-button"></button>
+            <button type="button" class="profile__add-button" aria-label="Добавить фото"></button>
         </section>
         <section class="elements">
             <article class="element">
                 <img class="element__image" src="./images/karachaevsk.jpg" alt="Карачаевск">
                 <div class="element__group">
                     <h2 class="element__title">Карачаевск</h2>
-                    <button type="button" class="element__like-button"></button>
+                    <button type="button" class="element__like-button" aria-label="Лайк фотографии"></button>
                 </div>
             </article>
             <article class="element">
@@ -71,17 +71,17 @@
     <footer class="footer">
         <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
     </footer>
-    <section class="popup">
+    <div class="popup">
         <div class="popup__container">
             <h3 class="popup__title">Редактировать профиль</h3>
-            <form class="popup__form">
-            <input type="text" class="popup__formfield popup__formfield_type_name" name="name">
-            <input type="text" class="popup__formfield popup__formfield_type_description" name="description">
-            <button type="submit" class="popup__save-button">Сохранить</button>
+            <form class="popup__form" name="profile-edit">
+              <input type="text" class="popup__form-field popup__form-field_type_name" name="name">
+              <input type="text" class="popup__form-field popup__form-field_type_description" name="description">
+              <button type="submit" class="popup__save-button">Сохранить</button>
             </form>
-            <button type="button" class="popup__close-button"></button>
+            <button type="button" class="popup__close-button" aria-label="Закрыть редактирование профиля"></button>
         </div>
-    </section>
+    </div>
     <script src="./scripts/index.js"></script>
 </body>
 </html>

@@ -1,7 +1,10 @@
 .element {
     width: 282px;
+    height: 361px;
     margin: 0;
     background-color: #ffffff;
     overflow: hidden;
     border-radius: 10px;
+    position: relative;
 }
+

@@ -2,7 +2,7 @@
     font-weight: 400;
     font-size: 18px;
     line-height: 22px;
-    margin: 16px 0 0 0;
+    margin: 16px auto 0 0;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
@@ -13,6 +13,6 @@
         font-size: 14px;
         line-height: 17px;
         text-align: center;
-        margin: 7px 0 0 0;
+        margin: 7px auto 0 auto;
     }
 }

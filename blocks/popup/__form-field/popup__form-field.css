@@ -1,4 +1,4 @@
-.popup__formfield {
+.popup__form-field {
     border: none;
     border-bottom: 1px solid rgba(0, 0, 0, .2);
     font-size: 14px;
@@ -11,7 +11,7 @@
     outline: 0;
 }
 
-.popup__formfield:last-of-type {
+.popup__form-field:last-of-type {
     margin-top: 30px;
 }
 

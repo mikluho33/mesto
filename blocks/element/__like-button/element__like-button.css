@@ -8,6 +8,7 @@
     background-size: contain;
     transition: opacity .3s ease-in;
     cursor: pointer;
+    margin-right: 5px;
   }
   
   .element__like-button:hover {
