@@ -22,11 +22,13 @@
         font-size: 27px;
         line-height: 33px;
         margin: 0 auto 0 46px;
+        max-width: 250px;
     }
 }
 
 @media screen and (max-width:321px) {
     .profile__name {
+        max-width: 189px;
         margin: 0 auto 0 46px;
     }
 }
