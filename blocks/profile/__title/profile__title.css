@@ -1,7 +1,6 @@
 .profile__title {
     display: flex;
     margin: 0;
-    max-width: 356px;
     align-items: baseline;
     box-sizing: border-box;
     justify-content: space-between;
