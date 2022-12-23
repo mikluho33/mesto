@@ -4,31 +4,24 @@
     font-style: normal;
     line-height: 48px;
     margin: 0;
+    padding: 0;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-    max-width: 400px;
+    max-width: 306px;
 }
-
-@media screen and (max-width:1100px) {
-    .profile__name {
-        max-width: 300px;
-    }
-}
-
 
 @media screen and (max-width:700px) {
     .profile__name {
         font-size: 27px;
         line-height: 33px;
         margin: 0 auto 0 46px;
-        max-width: 250px;
+        max-width: 210px;
     }
 }
 
 @media screen and (max-width:321px) {
     .profile__name {
         max-width: 189px;
-        margin: 0 auto 0 46px;
     }
 }
