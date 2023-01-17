@@ -6,7 +6,6 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    transition: opacity .3s ease-in;
     cursor: pointer;
     margin-right: 5px;
   }
