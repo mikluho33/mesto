@@ -18,7 +18,6 @@ buttonCloseList.forEach(btn => {
 // Задаются значения карточки в галерее
 const buttonOpenCard = document.querySelector('.profile__add-button');
 const popupAddCard = document.querySelector('.popup-card');
-const buttonCloseCard = popupAddCard.querySelector('.popup__close-button');
 const formCardElement = popupAddCard.querySelector('.popup-card__form');
 const titleCardInput = formCardElement.querySelector('.popup__form-field_type_title');
 const linkCardInput = formCardElement.querySelector('.popup__form-field_type_link');
@@ -32,7 +31,6 @@ const templateCard = document.querySelector('#cards-template').content;
 const popupCard = document.querySelector('.popup-image');
 const popupImage = popupCard.querySelector('.popup__image');
 const popupCapture = popupCard.querySelector('.popup__capture');
-const popupCloseBtn = popupCard.querySelector('.popup-image__close-button');
 
 // Открытие и закрытие попапа добавления фото
 buttonOpenCard.addEventListener('click', function () {
@@ -100,7 +98,6 @@ function addCard(card) {
 
 // Задаются значения для попапа редактирования профиля
 const profileEdit = document.querySelector('.profile__edit-button');
-const profileClose = document.querySelector('.popup__close-button');
 const profileName = document.querySelector('.profile__name');
 const profileDescription = document.querySelector('.profile__description');
 const popupEditProfile = document.querySelector('.popup-profile');
