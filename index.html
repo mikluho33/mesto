@@ -50,16 +50,23 @@
           </form>
           <button type="button" class="popup__close-button" aria-label="Закрыть добавление места"></button>
         </div>
-      </div>
-    <template id="cards-template">
-    <article class="element">
-        <button type="button" class="element__delete-button" aria-label="Удаление фотографии"></button>
-        <img class="element__image" src="#" alt="#">
-        <div class="element__group">
-            <h2 class="element__title"></h2>
-            <button type="button" class="element__like-button" aria-label="Лайк фотографии"></button>
+    </div>
+    <div class="popup popup-image">
+        <div class="popup__image-container">
+            <img src="#" alt="#" class="popup__image">
+            <button type="button" class="popup__close-button popup-image__close-button" aria-label="Закрыть фото"></button>
+            <h3 class="popup__capture"></h3>
         </div>
-    </article>
+    </div>
+    <template id="cards-template">
+        <article class="element">
+            <button type="button" class="element__delete-button" aria-label="Удаление фотографии"></button>
+            <img class="element__image" src="#" alt="#">
+            <div class="element__group">
+                <h2 class="element__title"></h2>
+                <button type="button" class="element__like-button" aria-label="Лайк фотографии"></button>
+            </div>
+        </article>
     </template>
     <script src="./scripts/index.js"></script>
 </body>

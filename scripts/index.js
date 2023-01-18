@@ -1,32 +1,42 @@
+// Функция открытия попапов универсальная
+const openPopup = function (popup) {
+  popup.classList.add('popup_opened');
+}
+
+// Функция закрытия попапов универсальная
+const closePopup = function (popup) {
+  popup.classList.remove('popup_opened');
+}
+
 // Задаются данные карточек по умолчанию
 const initialCards = [
-{
-    name: 'Карачаевск',
-    link: '../images/karachaevsk.jpg'
-},
-{
-    name: 'Гора Эльбрус',
-    link: '../images/elbrus.jpg'
-},
-{
-    name: 'Домбай',
-    link: '../images/dombai.jpg'
-},
-{
-    name: 'Гора Эльбрус',
-    link: '../images/elbrus.jpg'
-},
-{
-    name: 'Домбай',
-    link: '../images/dombai.jpg'
-},
-{
-    name: 'Карачаево-Черкесия',
-    link: '../images/karachaevsk.jpg'
-}
-];
+  {
+    name: 'Архыз',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
+  },
+  {
+    name: 'Челябинская область',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
+  },
+  {
+    name: 'Иваново',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
+  },
+  {
+    name: 'Камчатка',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
+  },
+  {
+    name: 'Холмогорский район',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
+  },
+  {
+    name: 'Байкал',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
+  }
+]; 
 
-// Добавление карточки в галерею
+// Задаются значения карточки в галерее
 const buttonOpenCard = document.querySelector('.profile__add-button');
 const popupAddCard = document.querySelector('.popup-card');
 const buttonCloseCard = popupAddCard.querySelector('.popup__close-button');
@@ -38,15 +48,25 @@ const elementsContainer = document.querySelector('.elements');
 // Шаблон карточки
 const templateCard = document.querySelector('#cards-template').content;
 
+// Задаются значения для полноэкранного просмотра фото
+const popupCard = document.querySelector('.popup-image');
+const popupImage = popupCard.querySelector('.popup__image');
+const popupCapture = popupCard.querySelector('.popup__capture');
+const popupCloseBtn = popupCard.querySelector('.popup-image__close-button');
 
-// Открытие и закрытие попапа фото
+// Открытие и закрытие попапа добавления фото
 buttonOpenCard.addEventListener('click', function () {
     openPopup(popupAddCard);
 });
 
-  buttonCloseCard.addEventListener('click', function () {
+buttonCloseCard.addEventListener('click', function () {
     closePopup(popupAddCard);
-  });
+});
+
+// Закрпытие полноэкранного фото
+popupCloseBtn.addEventListener('click', function () {
+  closePopup(popupCard);
+});
 
 
 // Формирование карточки
@@ -69,24 +89,34 @@ function addCard(card) {
     like.target.classList.toggle('element__like-button_active');
     });
 
+    // Функция полноэкранного просмотра фото
+    function openFullCard() {
+      openPopup(popupCard);
+      popupImage.src = card.link;
+      popupImage.alt = card.name;
+      popupCapture.textContent = card.name;
+    }
+    imageCard.addEventListener('click', openFullCard);
+
     return elementCard;
 }
-    
-    function cardSubmit(evt) {
+  // Добавление нового фото   
+  function cardSubmit(evt) {
     evt.preventDefault();
     const newCard = {   
         name: titleCardInput.value,
         link: linkCardInput.value
     };
   
-    elementsContainer.prepend(addCard(newCard)); // Добавляем новое фото
+    elementsContainer.prepend(addCard(newCard));
     closePopup(popupAddCard); 
     evt.target.reset();
   };
 
-  formCardElement.addEventListener('submit', cardSubmit); // Отправка формы карточки
+  // Сохранение фото
+  formCardElement.addEventListener('submit', cardSubmit); 
 
-
+  // Добавление карточек по умолчанию
   function addInitialCards() {
     initialCards.forEach((card) => {
       const createCard = addCard(card)
@@ -105,15 +135,6 @@ const popupEditProfile = document.querySelector('.popup-profile');
 const popupForm = popupEditProfile.querySelector('.popup-profile__form');
 const nameInput = popupEditProfile.querySelector('.popup__form-field_type_name');
 const descriptionInput = popupEditProfile.querySelector('.popup__form-field_type_description');
-
-// Функция добавления карточки
-const openPopup = function (popup) {
-    popup.classList.add('popup_opened');
-  }
-  
-  const closePopup = function (popup) {
-    popup.classList.remove('popup_opened');
-  }
 
 //Функция редактирования профиля
   profileEdit.addEventListener('click', function () {
