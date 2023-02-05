@@ -1,11 +1,13 @@
 // Функция открытия попапов универсальная
 const openPopup = function (popup) {
   popup.classList.add('popup_opened');
+  document.addEventListener('keyup', closeKey);
 }
 
 // Функция закрытия попапов универсальная
 const closePopup = function (popup) {
   popup.classList.remove('popup_opened');
+  document.removeEventListener('keyup', closeKey);
 }
 
 // Закрытие попапов
@@ -14,6 +16,25 @@ buttonCloseList.forEach(btn => {
   const popup = btn.closest('.popup');
   btn.addEventListener('click', () => closePopup(popup)); 
 }) 
+
+//Закрытие попапов по кнопке Esc
+const closeKey = (evt) => {
+  evt.preventDefault();
+  if(evt.key === 'Escape') {
+    const openedPopup = document.querySelector('.popup_opened');
+    closePopup(openedPopup);
+  }
+}
+
+//Закрытие попапов по клику на overlay
+const overlayCloseList = Array.from(document.querySelectorAll('.popup'));
+overlayCloseList.forEach((popupItem) => {
+  popupItem.addEventListener('click', function (evt) {
+    if(evt.target.classList.contains('popup_opened')) {
+    closePopup(popupItem);
+  };
+});
+});
 
 // Задаются значения карточки в галерее
 const buttonOpenCard = document.querySelector('.profile__add-button');
@@ -36,8 +57,6 @@ const popupCapture = popupCard.querySelector('.popup__capture');
 buttonOpenCard.addEventListener('click', function () {
     openPopup(popupAddCard);
 });
-
-
 
 // Формирование карточки
 function addCard(card) {

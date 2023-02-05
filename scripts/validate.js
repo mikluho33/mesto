@@ -20,7 +20,6 @@ const showError = (formElement, inputElement, errorMessage, validationConfig) =>
 const hideError = (formElement, inputElement, validationConfig) => {
     const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
     inputElement.classList.remove(validationConfig.inputErrorClass);
-    errorElement.classList.remove(validationConfig.errorClass);
     errorElement.textContent = '';
   };
 
