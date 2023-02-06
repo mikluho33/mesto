@@ -10,14 +10,14 @@ const closePopup = function (popup) {
   document.removeEventListener('keyup', closeKey);
 }
 
-// Закрытие попапов
+// Закрытие попапов по кнопке-крестику
 const buttonCloseList = document.querySelectorAll('.popup__close-button'); 
 buttonCloseList.forEach(btn => {
   const popup = btn.closest('.popup');
   btn.addEventListener('click', () => closePopup(popup)); 
 }) 
 
-//Закрытие попапов по кнопке Esc
+//Закрытие попапов по кнопке Esc клавиатуры
 const closeKey = (evt) => {
   evt.preventDefault();
   if(evt.key === 'Escape') {

@@ -9,11 +9,11 @@ const validationConfig = {
   }; 
 
 //Показываем сообщение об ошибке ввода
-const showError = (formElement, inputElement, errorMessage, validationConfig) => {
+const showError = (formElement, inputElement, validationMessage, validationConfig) => {
     const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
     inputElement.classList.add(validationConfig.inputErrorClass);
     errorElement.classList.add(validationConfig.errorClass);
-    errorElement.textContent = errorMessage;;
+    errorElement.textContent = validationMessage;;
 };
 
 //Убираем сообщение об ошибке ввода
@@ -39,7 +39,7 @@ const isInputValid = (inputList) => {
     });
 };
 
-//Изменение кнопки по итогам валидации
+//Изменение кнопки Сохранить по итогам валидации
 const toggleButton = (inputList, buttonElement, validationConfig) => {
     if (isInputValid(inputList, validationConfig)) {
         buttonElement.classList.add(validationConfig.inactiveButtonClass);
@@ -50,7 +50,7 @@ const toggleButton = (inputList, buttonElement, validationConfig) => {
     }
 };
 
-//Делаем кнопку неактивной при открытии формы
+//Делаем кнопку Сохранить неактивной при открытии пустой формы
 const disableButton = (formElement, validationConfig) => {
     const disableElement = formElement.querySelector(validationConfig.submitButtonSelector);
         disableElement.classList.add(validationConfig.inactiveButtonClass);
@@ -70,7 +70,8 @@ const addEventListeners = (formElement, validationConfig) => {
     });
 };
 
-  const enableValidation = (validationConfig) => {
+//Основная функция валидации данных
+const enableValidation = (validationConfig) => {
     const formList = Array.from(document.querySelectorAll(validationConfig.formSelector));
    
     formList.forEach((formElement) => {
@@ -81,5 +82,5 @@ const addEventListeners = (formElement, validationConfig) => {
         });
 };
 
+//Вызываем функцию валидации с заданными классами и селекторами
 enableValidation(validationConfig);
-
