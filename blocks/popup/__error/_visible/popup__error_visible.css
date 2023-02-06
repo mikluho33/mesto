@@ -4,14 +4,6 @@
         font-size: 12px;
         line-height: 15px;
         color: #FF0000;
-        margin: 0;
-        height: 28px;
-        display: block;
-        box-sizing: border-box;
-      }
-
-.popup__error_visible:last-of-type {
-         margin: 0 0 5px 0;
       }
 
 @media screen and (max-width: 700px) {

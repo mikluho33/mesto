@@ -1,0 +1,10 @@
+.popup__error {
+    margin: 0;
+    height: 28px;
+    display: block;
+    box-sizing: border-box;
+  }
+
+.popup__error:last-of-type {
+     margin: 0 0 5px 0;
+  }
