@@ -1,7 +1,6 @@
 // Функция открытия попапов универсальная
 const openPopup = function (popup) {
   popup.classList.add('popup_opened');
-  disableButton(formElement, validationConfig);
   document.addEventListener('keyup', closeKey);
 }
 
@@ -12,8 +11,6 @@ const closePopup = function (popup) {
 }
 
 
-
-
 //Закрытие попапов по кнопке Esc клавиатуры
 const closeKey = (evt) => {
   evt.preventDefault();
@@ -22,6 +19,8 @@ const closeKey = (evt) => {
     closePopup(openedPopup);
   }
 }
+
+
 
 //Универсальное закрытие попапа по оверлэю и кнопке-крестик
 const popups = document.querySelectorAll('.popup');
@@ -35,6 +34,7 @@ popups.forEach((popup) => {
         }
     });
 });
+
 
 
 // Задаются значения карточки в галерее
