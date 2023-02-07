@@ -61,7 +61,14 @@ const disableButton = (formElement, validationConfig) => {
 const addEventListeners = (formElement, validationConfig) => {
    const inputList = Array.from(formElement.querySelectorAll(validationConfig.inputSelector));
    const buttonElement = formElement.querySelector(validationConfig.submitButtonSelector);
-   toggleButton(inputList, buttonElement, validationConfig);
+   
+    toggleButton(inputList, buttonElement, validationConfig);
+//setTimeout для обнуления после сохранения формы
+    formElement.addEventListener('reset', () => {
+         setTimeout(() => {
+         toggleButton(inputList, buttonElement, validationConfig);
+           }, 0); 
+        });
    inputList.forEach((inputElement) => {
         inputElement.addEventListener('input', () => {
             checkValidity(formElement, inputElement, validationConfig);

@@ -1,6 +1,7 @@
 // Функция открытия попапов универсальная
 const openPopup = function (popup) {
   popup.classList.add('popup_opened');
+  disableButton(formElement, validationConfig);
   document.addEventListener('keyup', closeKey);
 }
 
@@ -10,12 +11,8 @@ const closePopup = function (popup) {
   document.removeEventListener('keyup', closeKey);
 }
 
-// Закрытие попапов по кнопке-крестику
-const buttonCloseList = document.querySelectorAll('.popup__close-button'); 
-buttonCloseList.forEach(btn => {
-  const popup = btn.closest('.popup');
-  btn.addEventListener('click', () => closePopup(popup)); 
-}) 
+
+
 
 //Закрытие попапов по кнопке Esc клавиатуры
 const closeKey = (evt) => {
@@ -26,15 +23,19 @@ const closeKey = (evt) => {
   }
 }
 
-//Закрытие попапов по клику на overlay
-const overlayCloseList = Array.from(document.querySelectorAll('.popup'));
-overlayCloseList.forEach((popupItem) => {
-  popupItem.addEventListener('click', function (evt) {
-    if(evt.target.classList.contains('popup_opened')) {
-    closePopup(popupItem);
-  };
+//Универсальное закрытие попапа по оверлэю и кнопке-крестик
+const popups = document.querySelectorAll('.popup');
+popups.forEach((popup) => {
+    popup.addEventListener('mousedown', (evt) => {
+        if (evt.target.classList.contains('popup_opened')) {
+            closePopup(popup)
+        }
+        if (evt.target.classList.contains('popup__close-button')) {
+          closePopup(popup)
+        }
+    });
 });
-});
+
 
 // Задаются значения карточки в галерее
 const buttonOpenCard = document.querySelector('.profile__add-button');
@@ -130,7 +131,6 @@ const descriptionInput = popupEditProfile.querySelector('.popup__form-field_type
     nameInput.value = profileName.textContent;
     descriptionInput.value = profileDescription.textContent;
   });
-    closePopup(popupEditProfile);
   
 //Функция сохранения имени и описания профиля
 function saveProfile(evt) {
