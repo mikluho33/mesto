@@ -20,8 +20,6 @@ const closeKey = (evt) => {
   }
 }
 
-
-
 //Универсальное закрытие попапа по оверлэю и кнопке-крестик
 const popups = document.querySelectorAll('.popup');
 popups.forEach((popup) => {
